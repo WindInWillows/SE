@@ -1,5 +1,8 @@
 
 public class Node {
+	public Node() {
+	}
+
 	public int power;
 	public String v;
 	
@@ -12,8 +15,19 @@ public class Node {
 		this.power++;
 	}
 	
+	public void dec() {
+		this.power--;
+	}
+	
+	public Node getCopy(){
+		Node res = new Node();
+		res.power = this.power;
+		res.v = this.v;
+		return res;
+	}
+	
 	public boolean equals(Node n) {
-		return n.v == this.v 
+		return n.v.equals(this.v)
 		&& n.power == this.power;
 	}
 }
